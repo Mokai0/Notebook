@@ -1,0 +1,2 @@
+This will be a simple repository that I'll use to keep notes online so that access is possible from anywhere.
+It would be possible for others to submit merge requests for me to review to add to this notebook. I plan to make this public so that others may utilize the content here and as such I would like this to be a collaborative community effort.
