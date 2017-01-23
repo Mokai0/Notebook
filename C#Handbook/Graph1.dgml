@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="2c876bd9-e18c-4f14-9459-c3743b4420601" Category="Comment" Bounds="-806.932287483324,-657.818523406707,249.226666666667,73.8400000000001" Label="&quot;Model View Controller&quot; - should allow you to break your program/app into manageable chunks to be manipulated and maintained" />
+    <Node Id="90499272-1935-464d-9015-0dc213ba66e31" Category="Comment" Bounds="-1082.530621188,-657.818523035369,238.923333333333,73.8400000000001" Label="Think of this as Anjular but instead of it being a client side process it'll already be rendered and packaged before its sent to the client" />
+    <Node Id="AngularJS" Bounds="-1049.20562083646,-473.978519384969,69.9133333333334,44" Group="Expanded" Label="Razor" />
+    <Node Id="C#Project1" Bounds="-1109.20562083646,-697.818524623507,571.500000019805,327.840008888938" Group="Expanded" Label="C# Project" UseManualLocation="True" />
+    <Node Id="C#Uses.NETWithinIt'sOwnLanguage" Category="Comment" Bounds="-1057.48243435983,-753.781226578248,219.99,25.96" Label="C# uses .NET within it's own language" UseManualLocation="True" />
+    <Node Id="CSS" Bounds="-929.292287414008,-513.978519335204,50,25.96" Label="CSS" />
+    <Node Id="HTML" Bounds="-1069.20562083646,-513.978520601769,109.913333333333,104.0000024336" Group="Expanded" Label="HTML" />
+    <Node Id="JavaScript" Bounds="-929.292287503129,-458.018518118404,72.3600000000001,25.96" Label="JavaScript" />
+    <Node Id="MVC" Bounds="-707.318953407315,-553.978523109637,50,25.96" Label="MVC" />
+    <Node Id="TheWebApp" Bounds="-1089.20562083646,-553.978521818569,252.273333333334,164.0000048672" Group="Expanded" Label="The web app" />
+    <Node Id="ThisIsWhereTheC#CodeWillBe" Category="Comment" Bounds="-807.492337678105,-753.778875567685,192.566666666667,25.96" Label="This is where the C# code will be" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="2c876bd9-e18c-4f14-9459-c3743b4420601" Target="MVC" Bounds="-682.173156738281,-583.978820800781,0,21" />
+    <Link Source="90499272-1935-464d-9015-0dc213ba66e31" Target="AngularJS" Bounds="-873.330345464773,-535.391763319338,30.718540049638,101.386967580047" />
+    <Link Source="C#Project1" Target="2c876bd9-e18c-4f14-9459-c3743b4420601" Category="Contains" />
+    <Link Source="C#Project1" Target="90499272-1935-464d-9015-0dc213ba66e31" Category="Contains" />
+    <Link Source="C#Project1" Target="MVC" Category="Contains" />
+    <Link Source="C#Project1" Target="TheWebApp" Category="Contains" />
+    <Link Source="C#Uses.NETWithinIt'sOwnLanguage" Target="C#Project1" Bounds="-939.635603881303,-727.818495956299,13.3479479163373,22.2795155288721" />
+    <Link Source="HTML" Target="AngularJS" Category="Contains" />
+    <Link Source="TheWebApp" Target="CSS" Category="Contains" />
+    <Link Source="TheWebApp" Target="HTML" Category="Contains" />
+    <Link Source="TheWebApp" Target="JavaScript" Category="Contains" />
+    <Link Source="ThisIsWhereTheC#CodeWillBe" Target="C#Project1" Bounds="-730.172676629273,-727.818495956299,11.9924300845806,22.090367926746" />
+  </Links>
+  <Categories>
+    <Category Id="Comment" Label="Comment" Description="Represents a user defined comment on the diagram" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Comments" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Comment" ValueLabel="Has comment">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>

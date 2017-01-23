@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="AnySpecificJavaScriptCode" Bounds="-1032.25094034831,-658.641026322864,167.553333333333,25.96" Label="Any specific JavaScript code" />
+    <Node Id="Contains:JQuery,Bootstrap,AndOtherHeaderInfo" Category="Comment" Bounds="-1043.81689290365,-850.561426322864,223.336666666667,41.9200000000001" Label="Contains: JQuery, Bootstrap, and other header info" UseManualLocation="True" />
+    <Node Id="Controller" Bounds="-984.489658610026,-414.800426322864,72.7833333333333,25.96" UseManualLocation="True" />
+    <Node Id="Database" Bounds="-981.67346476237,-246.920126322864,69.2233333333334,25.96" UseManualLocation="True" />
+    <Node Id="EntitiyFramework" Category="Comment" Bounds="-916.073479410807,-302.880226322864,114.493333333333,25.96" Label="Entitiy Framework" UseManualLocation="True" />
+    <Node Id="HTML" Bounds="-1052.25094034831,-698.641126322864,207.553333333333,85.9602" Group="Expanded" Label="HTML" UseManualLocation="True" />
+    <Node Id="Layouts" Bounds="-1092.25094034831,-778.641326322864,287.553333333333,205.9606" Group="Expanded" UseManualLocation="True" />
+    <Node Id="ModelsFolder" Bounds="-916.333434651693,-542.680626322864,93.6466666666665,25.96" Label="Models folder" UseManualLocation="True" />
+    <Node Id="Page" Bounds="-1072.25094034831,-738.641226322864,247.553333333333,145.9604" Group="Expanded" Label="Page" UseManualLocation="True" />
+    <Node Id="Repository" Bounds="-985.706587320964,-358.840326322864,76.2633333333333,25.96" UseManualLocation="True" />
+    <Node Id="WouldContainSpecificIdentifiersAndInformation" Category="Comment" Bounds="-916.333461243696,-486.720526322864,229.52,41.92" Label="would contain specific identifiers and information. ie: First Name, Last Name..." UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="Contains:JQuery,Bootstrap,AndOtherHeaderInfo" Target="Layouts" Bounds="-936.603842037187,-808.641426322864,2.23242889644473,21.0502888233109" />
+    <Link Source="Controller" Target="Layouts" Bounds="-944.815856933594,-563.680725097656,1.7635498046875,148.880310058594" />
+    <Link Source="Controller" Target="Repository" Bounds="-944.186279296875,-388.840423583984,0.14923095703125,21.0012512207031" />
+    <Link Source="Database" Target="Repository" Bounds="-950.44287109375,-323.880493164063,0.34063720703125,76.9603729248047" />
+    <Link Source="EntitiyFramework" Target="Database" Bounds="-918.995271435765,-276.920226322864,39.7022674256459,25.179840473862" />
+    <Link Source="HTML" Target="AnySpecificJavaScriptCode" Category="Contains" />
+    <Link Source="Layouts" Target="Controller" Bounds="-950.622131347656,-572.680725097656,1.56988525390625,148.882415771484" />
+    <Link Source="Layouts" Target="Page" Category="Contains" />
+    <Link Source="Page" Target="HTML" Category="Contains" />
+    <Link Source="Repository" Target="Controller" Bounds="-950.051147460938,-379.841674804688,0.15020751953125,21.0013427734375" />
+    <Link Source="Repository" Target="Database" Bounds="-944.496887207031,-332.880340576172,0.36663818359375,76.9602508544922" />
+    <Link Source="WouldContainSpecificIdentifiersAndInformation" Target="ModelsFolder" Bounds="-849.164979912606,-510.552354125216,25.3214243181728,23.8318278023515" />
+  </Links>
+  <Categories>
+    <Category Id="Comment" Label="Comment" Description="Represents a user defined comment on the diagram" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Comments" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Comment" ValueLabel="Has comment">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>
