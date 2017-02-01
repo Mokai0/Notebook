@@ -23,3 +23,5 @@ Effecting a variable to itself is very simple in C# and while it can be redundan
 	bank *= money;
 	bank /= money;
 	bank %= money;
+
+#Object oriented programming
