@@ -8,8 +8,7 @@ Learning SQL
 		
 	Best practices:
 		While not required, its most common in the industry to capitalize the key words used within the SQL code.
-		
-		
+				
 Writing in SQL:
 	#Syntax rules:
 		text - requires ""
@@ -17,6 +16,29 @@ Writing in SQL:
 		numeric - no "" or spaces
 		
 	#Simple query string:
+		#Create
+		INSERT INTO table VALUES (value1, value2, value3...);
+		-Use this to add info to a table, with this setup you must have the correct corrosponding values to match up with each column that they'll be populating.
+		-It may be possible to utilize NULL to enter a 'void of info' value to a specific column, however this is not always applicable.
+		-Also in specific situations NULL may also be used to auto populate an entry within the table; Ex: using NULL wher an 'id' integer is called for, if the creator ot the table set up an auto property within this column then it would be possible to use a NULL value here and it would automatically populate the next entry with the included information. This is especially useful when you have multiple entries coming in at once and not necessarily from the same source.
+		
+		INSERT INTO table (column1, column2, column3...)
+			VALUES (value1, value2, value3...);
+		-Use this method logic to specify where different info may be added within the table schema. So long as you match up the correct column to its corrosponding value you will not run into issues:
+			O (column1, column3, column2) (value1, value3, value2)
+			X (column1, column3, column2) (value3, value1, value2)
+		-Additionally you may use this logic to omit info instead of using the NULL keyword:
+			(columnId, column1, column2) (NULL, value1, value2)
+			(column1, column2) (value1, value2)
+		
+		INSERT INTO table (column1, column2, column3...)
+			VALUES
+				(value1, value2, value3...),
+				(value1, value2, value3...),
+				(value1, value2, value3...);
+		-Use this to add multiple sets of data into the table schema.
+		
+		#Read
 		SELECT * FROM books;
 		-SELECT = get info from
 		-* = all available info from all the columns within the table
@@ -61,23 +83,37 @@ Writing in SQL:
 			WHERE table1.column = table2.column;
 		-Use this method to return a set of data from 2 tables that have corrosponding column info; like book id's, similar pricing across departments, etc...
 		
-		INSERT INTO table VALUES (value1, value2, value3...);
-		-Use this to add info to a table, with this setup you must have the correct corrosponding values to match up with each column that they'll be populating.
-		-It may be possible to utilize NULL to enter a 'void of info' value to a specific column, however this is not always applicable.
-		-Also in specific situations NULL may also be used to auto populate an entry within the table; Ex: using NULL wher an 'id' integer is called for, if the creator ot the table set up an auto property within this column then it would be possible to use a NULL value here and it would automatically populate the next entry with the included information. This is especially useful when you have multiple entries coming in at once and not necessarily from the same source.
+		#Update
+		UPDATE table SET column = value;
+		-This method logic will update/modify all the values within a column.
 		
-		INSERT INTO table (column1, column2, column3...)
-			VALUES (value1, value2, value3...);
-		-Use this method logic to specify where different info may be added within the table schema. So long as you match up the correct column to its corrosponding value you will not run into issues:
-			O (column1, column3, column2) (value1, value3, value2)
-			X (column1, column3, column2) (value3, value1, value2)
-		-Additionally you may use this logic to omit info instead of using the NULL keyword:
-			(columnId, column1, column2) (NULL, value1, value2)
-			(column1, column2) (value1, value2)
+		UPDATE table SET column1 = value1, column2 = value2;
+		-Same as before but multiple columns.
 		
-		INSERT INTO table (column1, column2, column3...)
-			VALUES
-				(value1, value2, value3...),
-				(value1, value2, value3...),
-				(value1, value2, value3...);
-		-Use this to add multiple sets of data into the table schema.
+		UPDATE table SET column = value WHERE condition;
+			Similar to the #Read operations you may use:
+			UPDATE table SET column = value WHERE column <operator> value;
+			UPDATE table SET column = value WHERE column IN (value1, value2...);
+			UPDATE table SET column = value WHERE column BETWEEN lowerValue AND largerValue;
+			UPDATE table SET column = value WHERE column LIKE <pattern/relativeValue>;
+		
+		#Delete
+		Delete FROM table
+		-Erases the entire table.
+		
+		DELETE table SET column = value WHERE condition;
+			Similar to the #Read operations you may use:
+			DELETE FROM table WHERE column <operator> value;
+			DELETE FROM table WHERE column IN (value1, value2...);
+			DELETE FROM table WHERE column BETWEEN lowerValue AND largerValue;
+			DELETE FROM table WHERE column LIKE <pattern/relativeValue>;
+		
+	#Regulating data
+		#BEGIN TRANSACTION -or- BEGIN
+		-Use this to break out of an autocommit and load as many method lines as you'd like to prepare to be ran.
+		
+		#COMMIT
+		-Use this to run the qued lines of code.
+		
+		#ROLLBACK
+		-Use this to restart the 'transaction' process and wipe the slate clean of any prepped/qued code so that you can start over.
