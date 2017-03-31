@@ -1,1 +1,0 @@
-ActionResult -> Most common type of return type for action methods, since all the MVC action result types share the ActionResult base class.
